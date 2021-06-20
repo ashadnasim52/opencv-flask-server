@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import os
 # Initialize the Flask application
-app = Flask(__name__)
+app = Flask("__main__")
 
 
 @app.route("/")
