@@ -28,8 +28,8 @@ def convert_image():
 
 
 # start flask app
-app.run(port=5000)
-
+if __name__ == '__main__':
+    app.run()
 
 # try:
 #     image = request.files['image']
