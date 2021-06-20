@@ -1,7 +1,8 @@
 from doodlewar2 import generate_sketch
 from flask import Flask, send_file, request
 import cv2
-
+import numpy as np
+import os
 # Initialize the Flask application
 app = Flask(__name__)
 
@@ -15,12 +16,12 @@ def home():
 @app.route('/convert_image', methods=['POST'])
 def convert_image():
     try:
-        image = request.files['image']
-        print(image)
-        processed_image = generate_sketch(image)
-        if 'image' not in request.files:
-            return "missing image attribute"
-        return "All ok with image"
+        file = request.files['image']
+        file.save("temp.png")
+        print("file saved...")
+        processed_image = generate_sketch()
+        print(processed_image)
+        return processed_image
     except Exception as error:
         print(error)
         return "Custom Error!!!!!!"
