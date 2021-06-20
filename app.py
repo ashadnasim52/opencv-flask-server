@@ -3,8 +3,12 @@ from flask import Flask, send_file, request
 import cv2
 import numpy as np
 import os
+from flask_cors import CORS, cross_origin
+
 # Initialize the Flask application
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route("/")
