@@ -3,6 +3,7 @@ from flask import Flask, send_file, request
 import cv2
 import numpy as np
 import os
+# Initialize the Flask application
 app = Flask(__name__)
 
 
