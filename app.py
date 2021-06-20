@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import os
 # Initialize the Flask application
-app = Flask("__main__")
+app = Flask(__name__)
 
 
 @app.route("/")
@@ -29,7 +29,7 @@ def convert_image():
 
 # start flask app
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
 
 # try:
 #     image = request.files['image']
